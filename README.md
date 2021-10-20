@@ -1,7 +1,7 @@
 # Simple Blog CRUD APIs 
 
 ##  About the Project <br>
-----
+
 ### Built with
 - Python
 - Django
@@ -13,9 +13,9 @@
 # API Spec
 
 ## User APIs
----
+
 ### User Schema
-``` Json
+``` Text
 {
     id: int,       
     name: string,      // 이름
@@ -38,17 +38,17 @@ Content-type: application/json
 ### Parameter
 ``` Json
 {
-    name: string 
-    email: string
-    password : string
+    "name": "string" 
+    "email": "string"
+    "password" : "string"
 }
 ```
 
 ### Response
 ``` Json
 {
-    message : SUCCESS,
-    username : username
+    "message" : "SUCCESS",
+    "username" : "username"
 }
 ```
 
@@ -67,23 +67,23 @@ Content-type: application/json
 ### Parameter
 ``` Json
 {
-    email: string
-    password : string
+    "email": "string"
+    "password" : "string"
 }
 ```
 
 ### Response
 ``` Json
 {
-    message : SUCCESS,
-    token : token-example,
-    username: username
+    "message" : "SUCCESS",
+    "token" : "token-example",
+    "username": "username"
 }
 ```
 ## Posting APIs
----
+
 ### Posting Schema
-``` Json
+``` Text
 {
     id: int,       
     title: string,          // 제목
@@ -109,15 +109,15 @@ Content-type: application/json
 ### Parameter
 ``` Json
 {
-    title: post title,
-    text: post text,
+    "title": "post title",
+    "text": "post text",
 }
 ```
 
 ### Response
 ``` Json
 {
-    message : post title has successfully posted
+    "message" : "post title has successfully posted"
 }
 ```
 <br>
@@ -134,13 +134,13 @@ Host: localhost
 ### Response
 ``` Json
 {
-    result: {
-        id: 1,
-        author: username,
-        title: posting title,
-        text: posting text,
-        created_time: "2021-10-20T08:32:18.134Z",
-        updated_at: "2021-10-20T08:32:18.135Z"
+    "result": {
+        "id": 1,
+        "author": "username",
+        "title": "posting title",
+        "text": "posting text",
+        "created_time": "2021-10-20T08:32:18.134Z",
+        "updated_at": "2021-10-20T08:32:18.135Z"
     }
 }
 ```
@@ -161,14 +161,14 @@ Content-type: application/json
 ### Parameter
 ``` Json
 {
-    text: post text,
+    "text": "post text",
 }
 ```
 
 ### Response
 ``` Json
 {
-  message : post title has successfully updated
+  "message" : "post title has successfully updated"
 }
 ```
 
@@ -187,14 +187,15 @@ Authorization: Bearer {ACCESS_TOKEN}
 ### Response
 ``` Json
 {
-  message : post title has successfully deleted
+  "message" : "post title has successfully deleted"
 }
 ```
 
 <br>
 
 ## 포스팅 목록 불러오기
-포스팅 데이터 목록을 불러온다. Offset과 limit을 통해 pagination 구현이 가능하다.
+포스팅 데이터 목록을 불러온다. 불러온 포스팅 정보의 개수와 포스팅 정보가 반환된다. <br> 
+Offset과 limit을 통해 pagination 구현이 가능하다.
 
 ### URL
 ``` Text
@@ -205,16 +206,16 @@ Host: localhost
 ### Response
 ``` Json
 {
-    result: {
-        count: 1,     // 불러온 포스팅 정보 개수
-        postings: [
+    "result": {
+        "count": 1,
+        "postings": [
             {
-                id: 1,
-                author: username,
-                title: posting title,
-                text: posting text,
-                created_time: "2021-10-20T08:32:18.134Z",
-                updated_at: "2021-10-20T08:32:18.135Z"
+                "id": 1,
+                "author": "username",
+                "title": "posting title",
+                "text": "posting text",
+                "created_time": "2021-10-20T08:32:18.134Z",
+                "updated_at": "2021-10-20T08:32:18.135Z"
             }
         ]
     }
